@@ -1,0 +1,15 @@
+# Works with pip on a laptop or in Google Colab (Colab already has most of these).
+torch>=2.0
+torchvision>=0.15
+opencv-python>=4.7
+numpy>=1.23
+pillow>=10.1
+pytesseract>=0.3.10    # also needs the Tesseract program: apt-get install tesseract-ocr (Colab/Linux)
+matplotlib>=3.6
+tqdm>=4.64
+pytest>=7.0
+pyarrow>=12          # reading the Hugging Face parquet files (label recovery)
+huggingface_hub>=0.20  # downloading them (optional: falls back to plain HTTP)
+# Optional, faster edit distance for CER/WER. metrics.py falls back to pure Python
+# if it's missing (it failed to build on Python 3.13 in our test box).
+editdistance>=0.6; python_version < "3.13"
